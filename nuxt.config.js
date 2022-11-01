@@ -18,10 +18,14 @@ export default {
   css: [
     '~/static/css/scroll.css'
   ],
+  purgeCSS: {
+    whitelistPatterns: [/svg.*/, /fa.*/]
+  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/router.js'
+    '~/plugins/router.js',
+    '~/plugins/axios.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -35,15 +39,26 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     'cookie-universal-nuxt',
-    'bootstrap-vue/nuxt'
+    'bootstrap-vue/nuxt',
+    '@nuxtjs/fontawesome',
+    // 跨域
+    // '@nuxtjs/proxy'
   ],
-
+  loading: '~/components/Loading.vue',
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: '/',
+    // proxy: true,
   },
-
+  // proxy: {
+  //   '/api': {
+  //     target: 'http://localhost:3000',
+  //     pathRewrite: {
+  //       '^/api': ''
+  //     }
+  //   }
+  // },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   router: {
@@ -51,5 +66,11 @@ export default {
   },
   bootstrapVue: {
     icons: true
-  }
+  },
+  fontawesome: {
+    icons: {
+      solid: true,
+      brands: true
+    }
+  },
 }

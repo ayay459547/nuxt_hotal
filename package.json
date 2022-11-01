@@ -12,6 +12,7 @@
     "lintfix": "prettier --write --list-different ."
   },
   "dependencies": {
+    "@fortawesome/vue-fontawesome": "^2.0.8",
     "@nuxtjs/axios": "^5.13.6",
     "bootstrap-vue": "^2.23.1",
     "cookie-universal-nuxt": "^2.2.2",
@@ -21,6 +22,9 @@
     "vue-template-compiler": "^2.7.10"
   },
   "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@nuxtjs/fontawesome": "^1.1.2",
     "eslint-config-prettier": "^8.5.0",
     "prettier": "^2.7.1",
     "pug": "^3.0.2",

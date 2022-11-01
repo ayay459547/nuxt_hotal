@@ -1,86 +1,236 @@
 export const roomList = [
   {
     id: 1,
-    count: 33,
+    favorite: 33,
     name: 'Single Room',
+    type: 1,
     price: {
       weekday: 1380,
-      weekend: 1500
+      weekend: 1500,
     },
-    imgList: [
-      '/room/room1-1.png',
-      '/room/room1-2.png', 
-      '/room/room1-3.png',
-    ]
+    imgList: ['/room/room1-1.png', '/room/room1-2.png', '/room/room1-3.png'],
+    descriptionShort: {
+      GuestMin: 1,
+      GuestMax: 1,
+      Bed: ['Single'],
+      PrivateBath: 1,
+      Footage: 18,
+    },
+    description:
+      'Single Room is only reserved for one guest. There is a bedroom with a single size bed and a private bathroom. Everything you need prepared for you: sheets and blankets, towels, soap and shampoo, hairdryer are provided. In the room there is AC and of course WiFi.',
+    checkInAndOut: {
+      checkInEarly: '15:00',
+      checkInLate: '19:00',
+      checkOut: '10:00',
+    },
+    amenities: {
+      WiFi: true,
+      Breakfast: true,
+      MiniBar: false,
+      RoomService: false,
+      Television: true,
+      AirConditioner: true,
+      Refrigerator: true,
+      Sofa: false,
+      GreatView: false,
+      SmokeFree: false,
+      ChildFriendly: false,
+      PetFriendly: true,
+    },
   },
   {
     id: 2,
-    count: 40,
+    favorite: 40,
     name: 'Deluxe Single Room',
+    type: 1,
     price: {
       weekday: 1890,
-      weekend: 2000
+      weekend: 2000,
     },
-    imgList: [
-      '/room/room2-1.png',
-      '/room/room2-2.png',
-      '/room/room2-3.png',
-    ]
+    imgList: ['/room/room2-1.png', '/room/room2-2.png', '/room/room2-3.png'],
+    descriptionShort: {
+      GuestMin: 1,
+      GuestMax: 1,
+      Bed: ['Single'],
+      PrivateBath: 1,
+      Footage: 20,
+    },
+    description:
+      'Single Room is only reserved for one guest. There is a bedroom with a single size bed and a private bathroom. Everything you need prepared for you: sheets and blankets, towels, soap and shampoo, hairdryer are provided. In the room there is AC and of course WiFi.',
+    checkInAndOut: {
+      checkInEarly: '15:00',
+      checkInLate: '19:00',
+      checkOut: '10:00',
+    },
+    amenities: {
+      WiFi: true,
+      Breakfast: true,
+      MiniBar: false,
+      RoomService: true,
+      Television: true,
+      AirConditioner: true,
+      Refrigerator: true,
+      Sofa: true,
+      GreatView: true,
+      SmokeFree: false,
+      ChildFriendly: false,
+      PetFriendly: true,
+    },
   },
   {
     id: 3,
-    count: 52,
+    favorite: 52,
     name: 'Double Room',
+    type: 2,
     price: {
       weekday: 2460,
-      weekend: 2500
+      weekend: 2500,
     },
-    imgList: [
-      '/room/room3-1.png',
-      '/room/room3-2.png',
-      '/room/room3-3.png',
-    ]
+    imgList: ['/room/room3-1.png', '/room/room3-2.png', '/room/room3-3.png'],
+    descriptionShort: {
+      GuestMin: 1,
+      GuestMax: 2,
+      Bed: ['Double'],
+      PrivateBath: 1,
+      Footage: 25,
+    },
+    description:
+      'Double Room is only reserved for one guest. There is a bedroom with a single size bed and a private bathroom. Everything you need prepared for you: sheets and blankets, towels, soap and shampoo, hairdryer are provided. In the room there is AC and of course WiFi.',
+    checkInAndOut: {
+      checkInEarly: '15:00',
+      checkInLate: '19:00',
+      checkOut: '10:00',
+    },
+    amenities: {
+      WiFi: true,
+      Breakfast: true,
+      MiniBar: false,
+      RoomService: false,
+      Television: true,
+      AirConditioner: true,
+      Refrigerator: true,
+      Sofa: false,
+      GreatView: false,
+      SmokeFree: false,
+      ChildFriendly: false,
+      PetFriendly: true,
+    },
   },
   {
     id: 4,
-    count: 10,
+    favorite: 10,
     name: 'Deluxe Double Room',
+    type: 2,
     price: {
       weekday: 2888,
-      weekend: 3000
+      weekend: 3000,
     },
-    imgList: [
-      '/room/room4-1.png',
-      '/room/room4-2.png',
-      '/room/room4-3.png',
-    ]
+    imgList: ['/room/room4-1.png', '/room/room4-2.png', '/room/room4-3.png'],
+    descriptionShort: {
+      GuestMin: 1,
+      GuestMax: 2,
+      Bed: ['Double'],
+      PrivateBath: 1,
+      Footage: 28,
+    },
+    description:
+      'Deluxe Double Room is only reserved for one guest. There is a bedroom with a single size bed and a private bathroom. Everything you need prepared for you: sheets and blankets, towels, soap and shampoo, hairdryer are provided. In the room there is AC and of course WiFi.',
+    checkInAndOut: {
+      checkInEarly: '15:00',
+      checkInLate: '19:00',
+      checkOut: '10:00',
+    },
+    amenities: {
+      WiFi: true,
+      Breakfast: true,
+      MiniBar: false,
+      RoomService: true,
+      Television: true,
+      AirConditioner: true,
+      Refrigerator: true,
+      Sofa: true,
+      GreatView: true,
+      SmokeFree: false,
+      ChildFriendly: false,
+      PetFriendly: true,
+    },
   },
   {
     id: 5,
-    count: 75,
+    favorite: 75,
     name: 'Twin Room',
+    type: 3,
     price: {
       weekday: 3350,
-      weekend: 3500
+      weekend: 3500,
     },
-    imgList: [
-      '/room/room5-1.png',
-      '/room/room5-2.png',
-      '/room/room5-3.png',
-    ]
+    imgList: ['/room/room5-1.png', '/room/room5-2.png', '/room/room5-3.png'],
+    descriptionShort: {
+      GuestMin: 1,
+      GuestMax: 4,
+      Bed: ['Double', 'Double'],
+      PrivateBath: 2,
+      Footage: 30,
+    },
+    description:
+      'Twin Room is only reserved for one guest. There is a bedroom with a single size bed and a private bathroom. Everything you need prepared for you: sheets and blankets, towels, soap and shampoo, hairdryer are provided. In the room there is AC and of course WiFi.',
+    checkInAndOut: {
+      checkInEarly: '15:00',
+      checkInLate: '19:00',
+      checkOut: '10:00',
+    },
+    amenities: {
+      WiFi: true,
+      Breakfast: true,
+      MiniBar: true,
+      RoomService: true,
+      Television: true,
+      AirConditioner: true,
+      Refrigerator: true,
+      Sofa: true,
+      GreatView: true,
+      SmokeFree: false,
+      ChildFriendly: true,
+      PetFriendly: true,
+    },
   },
   {
     id: 6,
     name: 'Deluxe Twin Room',
+    type: 3,
     price: {
       weekday: 3899,
-      weekend: 4000
+      weekend: 4000,
     },
-    count: 21,
-    imgList: [
-      '/room/room6-1.png',
-      '/room/room6-2.png',
-      '/room/room6-3.png',
-    ]
-  }
+    favorite: 21,
+    imgList: ['/room/room6-1.png', '/room/room6-2.png', '/room/room6-3.png'],
+    descriptionShort: {
+      GuestMin: 1,
+      GuestMax: 6,
+      Bed: ['Double', 'Double', 'Double'],
+      PrivateBath: 3,
+      Footage: 35,
+    },
+    description:
+      'Deluxe Twin Room is only reserved for one guest. There is a bedroom with a single size bed and a private bathroom. Everything you need prepared for you: sheets and blankets, towels, soap and shampoo, hairdryer are provided. In the room there is AC and of course WiFi.',
+    checkInAndOut: {
+      checkInEarly: '15:00',
+      checkInLate: '19:00',
+      checkOut: '10:00',
+    },
+    amenities: {
+      WiFi: true,
+      Breakfast: true,
+      MiniBar: true,
+      RoomService: true,
+      Television: true,
+      AirConditioner: true,
+      Refrigerator: true,
+      Sofa: true,
+      GreatView: true,
+      SmokeFree: false,
+      ChildFriendly: true,
+      PetFriendly: true,
+    },
+  },
 ]

@@ -1,7 +1,8 @@
-export const state = {
-  token: ''
+export const state = () => {
+  return {
+    token: ''
+  }  
 }
-
 export const mutations = {
   initToken (state) {
     state.token = this.$cookies.get('token')
