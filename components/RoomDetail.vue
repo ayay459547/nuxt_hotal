@@ -252,7 +252,7 @@ export default {
     }
 
     [class^="img-"] {
-      width: 70%;
+      width: 80%;
       display: block;
       margin: 4px auto;
       object-fit: cover;

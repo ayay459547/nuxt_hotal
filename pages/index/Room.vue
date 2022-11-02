@@ -25,8 +25,8 @@
     <b-modal 
       v-model="modalShow" 
       size="xl"
-      centered 
-      scrollable 
+      centered
+      scrollable
       :title="currentRoomData.name"
     >
       <RoomDetail :roomData="currentRoomData"/>
@@ -37,15 +37,58 @@
             class="float-right"
             @click="modalShow=false"
           >
-            Close
+            關閉
           </b-button>
           <b-button
             variant="info"
             class="float-right"
             style="margin: 0 8px"
-            @click="modalShow=false"
+            @click="bookingRoom"
           >
-            Booking
+            預定
+          </b-button>
+        </div>
+      </template>
+    </b-modal>
+
+    <b-modal 
+      v-model="bookingModal"
+      centered
+      title="預定"
+    >
+      <label for="check-in">入住日期</label>
+      <b-form-datepicker
+        id="check-in"
+        v-model="checkDate.checkIn"
+        :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"
+        required
+      ></b-form-datepicker>
+
+      <label class="mt-3" for="check-out">退房日期</label>
+      <b-form-datepicker
+        id="check-out"
+        v-model="checkDate.checkOut"
+        :date-format-options="{ month: 'numeric', day: 'numeric', year: 'numeric' }"
+        required
+      ></b-form-datepicker>
+
+      <div style="margin-top: 16px; font-weight: 600;">{{ `價格: ${tempPrice.toLocaleString()}` }}</div>
+      <template #modal-footer>
+        <div>
+          <b-button
+            variant="primary"
+            class="float-right"
+            @click="bookingModal=false"
+          >
+            關閉
+          </b-button>
+          <b-button
+            variant="info"
+            class="float-right"
+            style="margin: 0 8px"
+            @click="bookingSubmit"
+          >
+            確認
           </b-button>
         </div>
       </template>
@@ -55,6 +98,8 @@
 
 <script>
 import { roomList } from '~/fakeData/room'
+import { mapMutations, mapActions } from 'vuex'
+
 export default {
   data() {
     return {
@@ -77,6 +122,11 @@ export default {
         },
       ],
       currentRoomId: 0,
+      bookingModal: false,
+      checkDate: {
+        checkIn: '',
+        checkOut: ''
+      }
     }
   },
   computed: {
@@ -147,6 +197,14 @@ export default {
         }
       )
     },
+    tempPrice() {
+      const price = this.getTotal(this.checkDate.checkIn, this.checkDate.checkOut, this.currentRoomData.price.weekday, this.currentRoomData.price.weekend)
+      if (isNaN(price)) {
+        return 0
+      } else {
+        return price
+      }
+    }
   },
   methods: {
     getRoom(type) {
@@ -156,12 +214,58 @@ export default {
     },
     openDetail(roomData) {
       this.currentRoomId = roomData.id
-      console.log(roomData)
     },
     closeDetail() {
       this.currentRoomId = 0
     },
-  },
+    ...mapMutations(['addReservation']),
+    ...mapActions(['checkReservation']),
+    // 目前沒有算假日的價錢
+    getTotal(startDate, endDate, weekdayPrice, weekendPrice) {
+      const dt1 = new Date(...startDate.split('-'))
+      const dt2 = new Date(...endDate.split('-'))
+
+      const diffDate = (dt2 - dt1) / (1000 * 60 * 60 * 24)
+
+      return  (diffDate + 1) * weekdayPrice
+    },
+    bookingRoom() {
+      this.bookingModal = true
+    },
+    async bookingSubmit() {
+      if (this.checkDate.checkIn === '' && this.checkDate.checkOut === '') {
+        this.$swal(
+          '無法儲存',
+          '請填寫日期',
+          'error'
+        )
+      } else {
+        this.$nuxt.$loading.start()
+        const info = {
+          roomData: this.currentRoomData,
+          checkDate: this.checkDate,
+          total: this.tempPrice
+        }
+        const checkRes = await this.checkReservation(info)
+
+        this.$nuxt.$loading.finish()
+        if (checkRes) {
+          this.addReservation(info)
+
+          this.modalShow = false
+          this.bookingModal = false
+
+          await this.$swal(
+            '預約成功',
+            '謝謝惠顧',
+            'success'
+          )
+
+          this.$router.push({ path: '/reservation' })
+        }
+      }
+    }
+  }
 }
 </script>
 

@@ -41,6 +41,7 @@ export default {
     'cookie-universal-nuxt',
     'bootstrap-vue/nuxt',
     '@nuxtjs/fontawesome',
+    'nuxt-sweetalert2',
     // 跨域
     // '@nuxtjs/proxy'
   ],
