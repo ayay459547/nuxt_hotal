@@ -16,6 +16,7 @@
             style="margin: 8px 0"
           >
             <b-card
+              v-if="room.imgList.length > 0"
               :title="room.name"
               :img-src="room.imgList[0]"
               :img-alt="room.name"
@@ -50,13 +51,16 @@
 <script>
 import { roomList } from '~/fakeData/room'
 export default {
-   computed: {
-    popularList () {
-      return roomList.map(item => item).sort((a, b) => {
-        return b.favorite - a.favorite
-      }).slice(0, 3)
+  data () {
+    return {
+      popularList: []
     }
   },
+  created () {
+    this.popularList = roomList.map(item => item).sort((a, b) => {
+      return b.favorite - a.favorite
+    }).slice(0, 3)
+  }
 }
 </script>
 

@@ -8,7 +8,11 @@ export const roomList = [
       weekday: 1380,
       weekend: 1500,
     },
-    imgList: ['/room/room1-1.png', '/room/room1-2.png', '/room/room1-3.png'],
+    imgList: [
+      require('~/static/room/room1-1.png'), 
+      require('~/static/room/room1-2.png'), 
+      require('~/static/room/room1-3.png')
+    ],
     descriptionShort: {
       GuestMin: 1,
       GuestMax: 1,
@@ -47,7 +51,11 @@ export const roomList = [
       weekday: 1890,
       weekend: 2000,
     },
-    imgList: ['/room/room2-1.png', '/room/room2-2.png', '/room/room2-3.png'],
+    imgList: [
+      require('~/static/room/room2-1.png'), 
+      require('~/static/room/room2-2.png'), 
+      require('~/static/room/room2-3.png')
+    ],
     descriptionShort: {
       GuestMin: 1,
       GuestMax: 1,
@@ -86,7 +94,11 @@ export const roomList = [
       weekday: 2460,
       weekend: 2500,
     },
-    imgList: ['/room/room3-1.png', '/room/room3-2.png', '/room/room3-3.png'],
+    imgList: [
+      require('~/static/room/room3-1.png'), 
+      require('~/static/room/room3-2.png'), 
+      require('~/static/room/room3-3.png')
+    ],
     descriptionShort: {
       GuestMin: 1,
       GuestMax: 2,
@@ -125,7 +137,11 @@ export const roomList = [
       weekday: 2888,
       weekend: 3000,
     },
-    imgList: ['/room/room4-1.png', '/room/room4-2.png', '/room/room4-3.png'],
+    imgList: [
+      require('~/static/room/room4-1.png'), 
+      require('~/static/room/room4-2.png'), 
+      require('~/static/room/room4-3.png')
+    ],
     descriptionShort: {
       GuestMin: 1,
       GuestMax: 2,
@@ -164,7 +180,11 @@ export const roomList = [
       weekday: 3350,
       weekend: 3500,
     },
-    imgList: ['/room/room5-1.png', '/room/room5-2.png', '/room/room5-3.png'],
+    imgList: [
+      require('~/static/room/room5-1.png'), 
+      require('~/static/room/room5-2.png'), 
+      require('~/static/room/room5-3.png')
+    ],
     descriptionShort: {
       GuestMin: 1,
       GuestMax: 4,
@@ -203,7 +223,11 @@ export const roomList = [
       weekend: 4000,
     },
     favorite: 21,
-    imgList: ['/room/room6-1.png', '/room/room6-2.png', '/room/room6-3.png'],
+    imgList: [
+      require('~/static/room/room6-1.png'), 
+      require('~/static/room/room6-2.png'), 
+      require('~/static/room/room6-3.png')
+    ],
     descriptionShort: {
       GuestMin: 1,
       GuestMax: 6,
