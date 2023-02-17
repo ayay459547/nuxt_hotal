@@ -10,6 +10,7 @@
           <span class="item-price">{{ item.total.toLocaleString() + ' NTD' }}</span>
           <b-button class="item-del" variant="danger" @click="cancel(itemIndex)">
             <font-awesome-icon icon="fa-solid fa-trash" />
+            <span>Delete</span>
           </b-button>
         </div>
       </li>
@@ -42,9 +43,6 @@ export default {
         }
       })
     }
-  },
-  created() {
-    console.log(this.$swal)
   }
 }
 </script>

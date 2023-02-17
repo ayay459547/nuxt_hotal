@@ -118,7 +118,7 @@ export default {
 
       this.$router.push({ name: 'login' })
     }
-  }
+  },
   // validate({ params, query }) {
   //   console.log('validate')
   //   return true

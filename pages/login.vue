@@ -46,13 +46,13 @@ export default {
   data() {
     return {
       account: {
-        value: '',
+        value: 'admin',
         label: '帳號',
         type: 'text',
         required: true,
       },
       password: {
-        value: '',
+        value: 'admin',
         label: '密碼',
         type: 'password',
         required: true,
