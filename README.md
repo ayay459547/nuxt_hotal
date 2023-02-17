@@ -1,5 +1,8 @@
 # vue_nuxt_project
 
+### Demo
+https://ayay459547.github.io/nuxt_hotal/
+
 ## Build Setup
 
 ```bash
