@@ -88,7 +88,6 @@
   @keyframes loader {
     0% {
       transform: scaleY(0.1);
-      // background: #fff;
     }
     50% {
       transform: scaleY(1);

@@ -9,7 +9,7 @@
           <span class="item-date">{{ `${item.checkDate.checkIn} ~ ${item.checkDate.checkOut}` }}</span>
           <span class="item-price">{{ item.total.toLocaleString() + ' NTD' }}</span>
           <b-button class="item-del" variant="danger" @click="cancel(itemIndex)">
-            <font-awesome-icon icon="fa-solid fa-trash" />
+            <!-- <font-awesome-icon icon="fa-solid fa-trash" /> -->
             <span>Delete</span>
           </b-button>
         </div>
